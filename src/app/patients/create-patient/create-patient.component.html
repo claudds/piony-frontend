@@ -1,0 +1,70 @@
+<form #patientForm='ngForm' (ngSubmit)="savePatient()">
+  <mat-card class="panel panel-primary">
+    <mat-toolbar color="primary">
+      <h3>Add Patient</h3>
+    </mat-toolbar>
+    <mat-card-content class="panel-body">
+      <div class="form-group">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-3">
+          <mat-form-field>
+            <input matInput required placeholder="First Name" id="firstName" name="firstName" [(ngModel)]="patient.firstName"
+              type="text" class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput required placeholder="Last Name" id="lastName" name="lastName" [(ngModel)]="patient.lastName"
+              type="text" class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput required placeholder="Mobile Phone" id="mobilePhone" name="mobilePhone" [(ngModel)]="patient.mobilePhone"
+              type="text">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select placeholder="Select Condition" id="conditions" name="condition" [(ngModel)]="patient.conditions"
+              class="form-control">
+              <mat-option *ngFor="let cond of conditions" [(value)]="cond">{{cond.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-xs-3">
+          <mat-form-field>
+            <input matInput placeholder="Street Address" id="addr" name="addr" [(ngModel)]="patient.streerAdress" type="text"
+              class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="City" id="city" name="city" [(ngModel)]="patient.city" type="text"
+              class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput placeholder="State" id="state" name="state" [(ngModel)]="patient.state" type="text"
+              class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput required placeholder="Postal Code" id="postalcode" name="postalcode" [(ngModel)]="patient.postalCode"
+              type="text" class="form-control">
+          </mat-form-field>
+
+          <mat-radio-group class="radio-group" name="active" [(ngModel)]="patient.status">
+            <mat-radio-button class="example-radio-button" value="active">
+              Active
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button" value="inactive">
+              Inactive
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="patientForm.invalid">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

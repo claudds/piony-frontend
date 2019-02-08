@@ -1,0 +1,44 @@
+<mat-toolbar *ngIf="!error">
+    <div>
+        <button mat-icon-button [disabled]="!canPageDown">
+            <mat-icon (click)="pageDown()">navigate_before</mat-icon>
+        </button>
+        <span>{{startIndex}} to {{endIndex}}</span>
+        <button mat-icon-button [disabled]="!canPageUp">
+            <mat-icon (click)="pageUp()">navigate_next</mat-icon>
+        </button>
+    </div>
+    <div class="form-group search-bar container">
+        <input class="search-bar" type="text" class="form-control" placeholder="Search by patient ID" [(ngModel)]="searchID">
+    </div>
+</mat-toolbar>
+<div *ngIf="isLoading">
+    <mat-spinner class="spinner" color="accent"></mat-spinner>
+</div>
+<div *ngIf="!isLoading">
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header color="primary">
+            <mat-panel-description class="spacer">
+                Patient ID: Name
+            </mat-panel-description>
+            <mat-panel-description class="spacer">
+                City
+            </mat-panel-description>
+            <mat-panel-description class="spacer">
+                Risk of Adverse Respiratory Conditions
+            </mat-panel-description>
+            <mat-panel-description class="spacer">Actions</mat-panel-description>
+        </mat-expansion-panel-header>
+    </mat-expansion-panel>
+    <mat-accordion color='primary' *ngFor="let patient of filteredPatients" dislayMode="flat" class="mat-table">
+        <app-display-patient [(patient)]="patient" (deleted)='onDeleteNotified($event)'></app-display-patient>
+    </mat-accordion>
+    <div *ngIf="error">
+        <mat-card class="container">
+            <mat-card-header color="primary">
+                <mat-card-title>Error</mat-card-title>
+                <mat-card-subtitle>{{error}}</mat-card-subtitle>
+            </mat-card-header>
+        </mat-card>
+    </div>
+</div>

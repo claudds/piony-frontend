@@ -1,0 +1,71 @@
+<form #patientForm='ngForm' (ngSubmit)="editPatient()">
+  <mat-toolbar color="primary">
+    <h3>Edit Patient</h3>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="closeDialog()">
+      <mat-icon color="accent">close</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-card class="panel panel-primary" class="container">
+    <div *ngIf="isLoading">
+      <mat-spinner class="spinner" color="accent"></mat-spinner>
+    </div>
+    <mat-card-content class="panel-body" *ngIf="patient && !isLoading">
+      <div class="form-group">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3">
+          <mat-form-field>
+            <input matInput required id="firstName" name="firstName" [(ngModel)]="patient.firstName" type="text" class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput required id="lastName" name="lastName" [(ngModel)]="patient.lastName" type="text" class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput id="mobilePhone" name="mobilePhone" [(ngModel)]="patient.mobilePhone" type="text">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select required id="conditions" name="condition" [(value)]="patient.conditions" class="form-control"
+              [compareWith]="compareById">
+              <mat-option *ngFor="let cond of conditions" [(value)]="cond">{{cond.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-xs-3">
+          <mat-form-field>
+            <input matInput id="addr" name="addr" [(ngModel)]="patient.streerAdress" type="text" class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput id="city" name="city" [(ngModel)]="patient.city" type="text" class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput id="state" name="state" [(ngModel)]="patient.state" type="text" class="form-control">
+          </mat-form-field>
+
+          <mat-form-field>
+            <input matInput required id="postalcode" name="postalcode" [(ngModel)]="patient.postalCode" type="text"
+              class="form-control">
+          </mat-form-field>
+
+          <mat-radio-group required class="radio-group" name="active" [(ngModel)]="patient.status">
+            <mat-radio-button class="example-radio-button" value="active">
+              Active
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button" value="inactive">
+              Inactive
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="patientForm.invalid">Save</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

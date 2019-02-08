@@ -1,0 +1,30 @@
+<mat-expansion-panel color="primary" multi="false" hideToggle disabled>
+  <mat-expansion-panel-header color="primary">
+    <mat-panel-title class="expansion-container">
+      Patient {{patient.id}}: {{patient.lastName}}, {{patient.firstName}}
+    </mat-panel-title>
+    <mat-panel-description class="expansion-container">
+      {{patient.city}}
+    </mat-panel-description>
+    <mat-panel-description class="risk">
+      <span class="expansion-container" *ngIf="patient.risk == 'low'" id="low-risk">{{patient.risk}} </span>
+      <span class="expansion-container" *ngIf="patient.risk == 'high'" id="high-risk">{{patient.risk}} </span>
+      <span class="expansion-container" *ngIf="patient.risk == 'medium'" id="med-risk">{{patient.risk}} </span>
+    </mat-panel-description>
+    <mat-panel-description>
+        <button mat-icon-button color="primary" (click)="viewPatient(patient.id)">
+            <mat-icon>description</mat-icon>
+          </button>
+          <button mat-icon-button color="accent" (click)="editPatient(patient.id)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deletePatient(patient.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <mat-action-row>
+    
+  </mat-action-row>
+</mat-expansion-panel>

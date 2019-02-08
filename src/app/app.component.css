@@ -1,0 +1,13 @@
+mat-button {
+    color: white
+}
+
+mat-tool-bar {
+    background-color: "primary";
+}
+
+.spinner {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}

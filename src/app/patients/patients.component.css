@@ -1,0 +1,25 @@
+
+.search-bar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 300px;
+    padding: 15px;
+}
+
+
+.spinner {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+.mat-icon-button.disabled {
+    pointer-events: none;
+}
+
+mat-panel-description {
+    flex: 1 1 auto;
+    width:25%!important;
+    font-size: 5!important;
+}

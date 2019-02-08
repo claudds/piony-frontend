@@ -1,0 +1,28 @@
+mat-panel-title {
+    flex: 1 1 auto;
+    width: 25%!important;
+    color: black!important;
+}
+
+mat-panel-description {
+    flex: 1 1 auto;
+    width: 25%!important;
+    color: black!important;
+}
+
+.risk {
+    position: inherit;
+    justify-items: flex-start;
+}
+
+#low-risk {
+    color: green;
+}
+
+#high-risk {
+    color: red;
+}
+
+#med-risk {
+    color: orange;
+}

@@ -1,0 +1,27 @@
+.mat-dialog-content {
+    overflow-y: hidden !important;
+    padding: 0;
+    margin: 0;
+}
+.mat-dialog-actions {
+    overflow-y: hidden !important;
+    padding: 0;
+    margin: 0;
+}
+
+mat-icon-button {
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 0 14px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.spinner {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}

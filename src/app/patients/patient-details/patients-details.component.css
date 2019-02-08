@@ -1,0 +1,17 @@
+.spinner {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+}
+
+.active {
+    color: green;
+}
+
+.inactive {
+    color: red;
+}
+
+.med {
+    color: orange;
+}

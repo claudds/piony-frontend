@@ -1,0 +1,34 @@
+<div *ngIf="isLoading">
+  <mat-spinner class="spinner" color="accent"></mat-spinner>
+</div>
+<mat-card class="container" *ngIf="patient && patient.risk && !isLoading">
+  <button mat-icon-button color="primary" routerLink="/patients">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <mat-card-header color="primary">
+    <mat-card-title>{{patient.firstName}} {{patient.lastName}}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content flex>
+    <div>
+      <mat-card>
+        <mat-card-content flex>
+          <p>{{patient.streerAdress}}, {{patient.city}}, {{patient.state}}, {{patient.postalCode}} </p>
+          <p>Tel: {{patient.mobilePhone}}</p>
+          <p> Condition: {{patient.conditions.name}}</p>
+          <div><span>Status: </span>
+            <span *ngIf="patient.status == 'active'" class="active">{{patient.status}}</span>
+            <span *ngIf="patient.status == 'inactive'" class="inactive">{{patient.status}}</span>
+          </div>
+          <div>
+            <span>Risk of Adverse Respiratory conditions: </span>
+            <span *ngIf="patient.risk == 'low'" class="active">{{patient.risk}}</span>
+            <span *ngIf="patient.risk == 'high'" class="inactive">{{patient.risk}}</span>
+            <span *ngIf="patient.risk == 'medium'" class="med">{{patient.risk}}</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-card-content>
+</mat-card>
