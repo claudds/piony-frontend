@@ -29,28 +29,13 @@ export class EditDialogueComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data) { }
 
   ngOnInit() {
-    this._patientService.getPatient(this.data.id).subscribe((pat: Patient) => {
-      this.patient = pat;
-    },
-      (err: any) => {
-        console.error("There was an error retrieving patient info: " + err);
-      });
+    this.patient = this.data.patient;
     this._patientService.getConditions().subscribe((conds) => {
       this.conditions = conds;
     },
       (err: any) => {
         console.error("There was an error retrieving conditions: " + err);
       });
-  }
-
-  editPatient(): void {
-    let edited: Patient = Object.assign({}, this.patient);
-    this._patientService.editPatient(edited).subscribe((patEdited) => {
-      this.patient = patEdited;
-      console.log("Edit Success");
-
-      this.dialogRef.close();
-    });
   }
 
   compareById(c1: Condition, c2: Condition): boolean {

@@ -31,19 +31,19 @@ export class DisplayPatientComponent implements OnInit {
     this._router.navigate(['/patients', id]);
   }
 
-  editPatient(id: number): void {
+  editPatient(patient: Patient): void {
     const dialogRef = this.editDialog.open(EditDialogueComponent, {
-      data: { id }
+      data: { patient }
     });
 
-    //Have to next the subscribes here because the postal code may have changed, we need to 
-    // retrieve the patient first before proceeding.
-    dialogRef.afterClosed().subscribe(() => {
-      this._patientService.getPatient(this.patient.id).subscribe((pat: Patient) => {
-        this.patient = pat;
+    //Have to retrieve the patient again here because the postal code may have changed
+    dialogRef.afterClosed().subscribe((res) => {
+      this._patientService.editPatient(res).subscribe((patEdited) => {
+        this.patient = patEdited;
+        console.log("Edit Success");
         this._riskService.getRisk(this.patient.postalCode).subscribe((risk) => {
           this.patient.risk = risk.properties.code;
-       });
+        });
       });
     });
   }
