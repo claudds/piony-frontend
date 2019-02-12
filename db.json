@@ -1,0 +1,161 @@
+{
+  "patients": [
+    {
+      "id": 7,
+      "mobilePhone": "514 233 1410",
+      "firstName": "James",
+      "lastName": "Piquette",
+      "streerAdress": "1820 Nipomo Ave",
+      "city": "Long Beach",
+      "state": "California",
+      "postalCode": "90815",
+      "conditions": {
+        "id": 2,
+        "name": "Crohn's Disease",
+        "description": "a chronic inflammatory disease of the intestines"
+      },
+      "status": "active"
+    },
+    {
+      "id": 8,
+      "mobilePhone": "3458930495",
+      "firstName": "Bob",
+      "lastName": "Boberson",
+      "streerAdress": "123 Park",
+      "city": "New York",
+      "state": "New York",
+      "postalCode": "10005",
+      "conditions": {
+        "id": 54,
+        "name": "Menopause",
+        "description": "Menopause is the time in a woman's life when menstrual periods permanently stop."
+      },
+      "status": "active",
+      "risk": null
+    },
+    {
+      "id": 9,
+      "mobilePhone": "5142331410",
+      "firstName": "John",
+      "lastName": "Piquette",
+      "streerAdress": "1820 Nipomo Ave",
+      "city": "Long Beach",
+      "state": "California",
+      "postalCode": "90815",
+      "conditions": {
+        "id": 6,
+        "name": "Scoliosis",
+        "description": "Scoliosis is an abnormal curve in the spine."
+      },
+      "status": "active",
+      "risk": null
+    },
+    {
+      "id": 10,
+      "mobilePhone": "4389992457",
+      "firstName": "Anne",
+      "lastName": "Laurent",
+      "streerAdress": "80 North St.",
+      "city": "Long Beach",
+      "state": "California",
+      "postalCode": "90815",
+      "conditions": {
+        "id": 2,
+        "name": "Crohn's Disease",
+        "description": "a chronic inflammatory disease of the intestines"
+      },
+      "status": "active",
+      "risk": null
+    },
+    {
+      "id": 11,
+      "mobilePhone": "4389992457",
+      "firstName": "Sansa",
+      "lastName": "Stark",
+      "streerAdress": "80 North St.",
+      "city": "Long Beach",
+      "state": "California",
+      "postalCode": "90815",
+      "conditions": {
+        "id": 54,
+        "name": "Menopause",
+        "description": "Menopause is the time in a woman's life when menstrual periods permanently stop."
+      },
+      "status": "active",
+      "risk": null
+    },
+    {
+      "id": 12,
+      "mobilePhone": "758493450",
+      "firstName": "Harry",
+      "lastName": "Potter",
+      "streerAdress": "123 Hogwarts",
+      "city": "Dallas",
+      "state": "Texas",
+      "postalCode": "75001",
+      "conditions": {
+        "id": 17,
+        "name": "Rheumatoid Arthritis",
+        "description": "Rheumatoid arthritis is an autoimmune disease that causes chronic inflammation of the joints, the tissue around the joints, as well as other organs in the body."
+      },
+      "status": "active",
+      "risk": null
+    },
+    {
+      "id": 13,
+      "mobilePhone": "2738495643",
+      "firstName": "Joey",
+      "lastName": "Tribbiani",
+      "streerAdress": "123 Park",
+      "city": "New York",
+      "state": "New York",
+      "postalCode": "10005",
+      "conditions": {
+        "id": 2,
+        "name": "Crohn's Disease",
+        "description": "a chronic inflammatory disease of the intestines"
+      },
+      "status": null,
+      "risk": null
+    },
+    {
+      "id": 14,
+      "mobilePhone": "8888888888",
+      "firstName": "Jon",
+      "lastName": "Snoq",
+      "streerAdress": "123 North st",
+      "city": "Beverly Hills",
+      "state": "California",
+      "postalCode": "90210",
+      "conditions": {
+        "id": 54,
+        "name": "Menopause",
+        "description": "Menopause is the time in a woman's life when menstrual periods permanently stop."
+      },
+      "status": "active",
+      "risk": null
+    }
+  ],
+  "conditions": [
+    {
+      "id": 6,
+      "name": "Scoliosis",
+      "description": "Scoliosis is an abnormal curve in the spine."
+    },
+    {
+      "id": 17,
+      "name": "Rheumatoid Arthritis",
+      "description": "Rheumatoid arthritis is an autoimmune disease that causes chronic inflammation of the joints, the tissue around the joints, as well as other organs in the body."
+    },
+    {
+      "id": 54,
+      "name": "Menopause",
+      "description": "Menopause is the time in a woman's life when menstrual periods permanently stop."
+    },
+    {
+      "id": 2,
+      "name": "Crohn's Disease",
+      "description": "a chronic inflammatory disease of the intestines"
+    }
+  ]
+}
